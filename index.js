@@ -21,6 +21,7 @@ io.on('connection', socket=>{
   socket.on("icecandidate", e=>{
     socket.to(e.roomId).emit("icecandidate", e);
   })
+  console.log(socket.id)
 })
 
 
