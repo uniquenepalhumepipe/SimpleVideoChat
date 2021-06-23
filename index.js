@@ -19,7 +19,6 @@ io.on('connection', socket=>{
   })
 
   socket.on("icecandidate", e=>{
-    console.log(e.roomId)
     socket.to(e.roomId).emit("icecandidate", e);
   })
 })
