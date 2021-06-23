@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WebRTC</title>
+        <style>
+          #videos{
+            text-align: center;
+            width: 100%;
+            display: grid;
+            place-items: center;
+          }
+          video{
+            width: 50vw;
+          }
+        </style>
+
+    </head>
+    <body>
+        <div id="videos"></div>
+        <br><br>
+        <div id="controls">
+         <input type="text" id="roomId"><button onclick="joinRoom()">Join Room</button>
+        </div>
+        <script
+            src="https://cdn.socket.io/4.1.2/socket.io.min.js"
+            integrity="sha384-toS6mmwu70G0fw54EGlWWeA4z3dyJ+dlXBtSURSKN4vyRFOcxd3Bzjj/AoOwY+Rg"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="main.js"></script>
+    </body>
+</html>
