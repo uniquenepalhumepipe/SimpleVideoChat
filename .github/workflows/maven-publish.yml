@@ -7,12 +7,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
     - uses: actions/checkout@v2
     - name: Install Node
@@ -28,3 +23,14 @@ jobs:
         git clone https://github.com/animeshdhakal/socketiot
         cd socketiot
         mvn package
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        asset_path: server/launcher/target/server-1.0.jar
+        draft: false
+        prerelease: false
