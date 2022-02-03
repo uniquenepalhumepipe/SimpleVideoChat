@@ -23,7 +23,6 @@ jobs:
         git clone https://github.com/animeshdhakal/socketiot
         cd socketiot
         mvn package
-        ls server/launcher/target/
         
     - name: Release
       uses: "marvinpinto/action-automatic-releases@latest"
@@ -33,4 +32,4 @@ jobs:
         prerelease: true
         title: "Development Build"
         files: |
-          ./server/launcher/target/server-*.jar
+          ./server/launcher/target/*.jar
