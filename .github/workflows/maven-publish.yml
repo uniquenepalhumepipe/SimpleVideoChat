@@ -26,6 +26,7 @@ jobs:
     
     - name: Set Release version env variable
       run: |
+        cd socketiot
         echo "RELEASE_VERSION=$(grep -oPm1 "(?<=<version>)[^<]+" "pom.xml")" >> $GITHUB_ENV
         
     - name: Release
