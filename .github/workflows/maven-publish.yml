@@ -23,6 +23,7 @@ jobs:
         git clone https://github.com/animeshdhakal/socketiot
         cd socketiot
         mvn package
+        ls server/launcher/target/
     - name: Create release
       id: create_release
       uses: actions/create-release@v1
