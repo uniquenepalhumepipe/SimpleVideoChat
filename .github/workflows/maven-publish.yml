@@ -24,6 +24,7 @@ jobs:
         cd socketiot
         mvn package
         ls server/launcher/target/
+        
     - name: Release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
@@ -32,5 +33,4 @@ jobs:
         prerelease: true
         title: "Development Build"
         files: |
-          LICENSE.txt
           *.jar
