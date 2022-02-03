@@ -24,6 +24,6 @@ jobs:
           distribution: 'adopt'
 
     - name: Build File
-      run: |
-        git clone https://github.com/animeshdhakal/socketiot .
-        mvn package
+    - run: git clone https://github.com/animeshdhakal/socketiot
+    - run: cd socketiot
+    - run: mvn package
